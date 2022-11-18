@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deploy
+  labels:
+    name: redis
+    app: myapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: redis
+      app: myapp
+  template:
+    metadata:
+      name: redis
+      labels:
+        name: redis
+        app: myapp
+    spec:
+      containers:
+        - name: redis
+          image: gcr.io/project-for-mohab/redis
+          ports:
+            - containerPort: 6379
