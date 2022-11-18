@@ -68,9 +68,9 @@ $ docker pull redis
 #### push images into GCR
 
 ```bash
-$ docker pull moatazxz/webapp:latest
+$ docker pull gcr.io/project-for-gcp-368920/myimage:latest
 $ docker pull redis
-$ docker tag moatazxz/webapp:latest gcr.io/PROJECT_NAME/webapp
+$ docker tag myimage gcr.io/PROJECT_NAME/myimage
 $ docker tag redis  gcr.io/PROJECT_NAME/redis
 $ docker push gcr.io/PROJECT_NAME/webapp
 $ docker push gcr.io/PROJECT_NAME/redis
@@ -80,7 +80,7 @@ First if you will use same deployment file dont forget to change image name in y
 - connect to your cluster using this command: 
  
 ```bash
-$ gcloud container clusters get-credentials CLUSTER_NAME --zone us-central1-a --project PROJECT_NAME
+$ gcloud compute ssh --zone "asia-east1-a" "private-vm"  --tunnel-through-iap --project "project-for-gcp-368920"
 ```
 
 - deploy the application using this command 
@@ -109,39 +109,49 @@ $ kubectl apply -f naodeport.yaml
 $ kubectl apply -f ingress.yaml
 ```
 
-- using this command to show ingress external IP 
+- using this command to show ingress external IP or loadbalancer
 
 ```bash
 $ kubectl get ingress
 ```
 ##### copy IP into your browser 
 
-# congratulations your application now UP and Running 
+# Unfortunately there is an error, I have tried a lot but it is useless (CrashLoopBackOff)
+![Screenshot from 2022-11-18 05-57-06](https://user-images.githubusercontent.com/43217520/202614833-ab4fb0c7-e517-44d7-9101-aa28d0937dd6.png)
 
 
-![Screenshot from 2022-09-22 01-57-46](https://user-images.githubusercontent.com/43217520/202612976-71ab71d7-570d-4521-8d5e-b59a03aab05b.png)
+
 # cluster view  
-
+![Screenshot from 2022-11-18 05-54-31](https://user-images.githubusercontent.com/43217520/202614824-c2415c94-fe86-4d76-b6ac-2ea5215a746a.png)
 
 
 
 
 
 # VM terminal view 
+![Screenshot from 2022-11-18 05-57-27](https://user-images.githubusercontent.com/43217520/202614835-b9d4128b-3bae-4881-82ff-99a61523c944.png)
 
 
 
 
-# Ingress view
+# Loadbalance view
+![Screenshot from 2022-11-18 06-04-37](https://user-images.githubusercontent.com/43217520/202614842-fd0740b9-22ac-4cc7-b3c5-6da6cfaeceb6.png)
 
 
 
 # cluster noed and vm 
-
+![Screenshot from 2022-11-18 05-54-52](https://user-images.githubusercontent.com/43217520/202614826-fa5351ee-c392-4055-95af-9ac90a1daa22.png)
+![Screenshot from 2022-11-18 06-05-53](https://user-images.githubusercontent.com/43217520/202614845-20fa5629-b77b-4469-900e-30620ace910a.png)
 
 
 # GCR
+![Screenshot from 2022-11-18 01-28-35](https://user-images.githubusercontent.com/43217520/202614821-3c2368c5-19c1-4e95-90a2-674378ee5a05.png)
 
 
 
 # services 
+
+![Screenshot from 2022-11-18 06-07-42](https://user-images.githubusercontent.com/43217520/202614720-d87e9211-ba62-4910-9f4d-b6ee8a8f5338.png)
+
+
+
