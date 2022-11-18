@@ -119,7 +119,7 @@ $ kubectl get ingress
 # congratulations your application now UP and Running 
 
 
-
+![Screenshot from 2022-09-22 01-57-46](https://user-images.githubusercontent.com/43217520/202612976-71ab71d7-570d-4521-8d5e-b59a03aab05b.png)
 # cluster view  
 
 
